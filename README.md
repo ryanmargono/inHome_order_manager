@@ -1,68 +1,39 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# # README.md
+## Installation
+`yarn install`
 
-## Available Scripts
+## Execution
+`npm start`
+`localhost:3000`
 
-In the project directory, you can run:
+## Design Decisions
 
-### `yarn start`
+### Folder Structure
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    ├── src                   
+    │   ├── components          	# reusable components
+    │   ├── hocs          			# higher order components
+    │   ├── stores         			# redux actions, effects, and reducers
+    │   ├── styles         			# css
+    │   ├── utils         			# utility functions
+    │   ├── views         			# components that are rendered by route
+    │   └── index.js				# app entry point and routes  
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Like with the backend, I wanted to approach this application as I would in a real world application. The benefits similarly from the backend architecture. To reiterate, seperation of concerns lead to easier unit testing and the organization also helps onboarding engineers in a scaling team.
 
-### `yarn test`
+### Ant Design UI Libary 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Like in the real world with time constraints and a small team, using UI libraries can help push out polished looking applications quickly. In the past, I’ve used Material UI Libraries but I wanted to explore a new one for this assignment and Ant Design was gaining a lot of traction on Reddit.
 
-### `yarn build`
+### React-Redux
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Typically, react-redux is used in situations where state needs to be globally available, such as communication between components with no common ancestry. This application could have gone without it, since each view can pass down the required information to their children. Despite this, react-redux is an important tool to know and I wanted to showcase that I knew how to use it. It helps with rerendering the view when edits / deletes are made without having to retrieve an updated list from the backend. However, since there are relational data, editing would require editing all assosiated states in the redux store. To keep things simple, I refreshed the state with the latest data from the backend when a manage view is rendered. In the future, this can be made more efficient by using react-ORM so that the backend wouldn’t have the requested in order to keep data in sync.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Limitations and Improvements
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+	* writing tests.
+	* more error handling.
+	* using redux-toolkit to simplify creating redux actions and reducers.
+	* using react-ORM to deal with many to many relationships in redux reducers.
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
