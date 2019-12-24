@@ -1,4 +1,4 @@
-# # README.md
+# README.md
 ## Installation
 `yarn install`
 
@@ -11,13 +11,13 @@
 ### Folder Structure
 
     ├── src                   
-    │   ├── components          	# reusable components
-    │   ├── hocs          			# higher order components
-    │   ├── stores         			# redux actions, effects, and reducers
-    │   ├── styles         			# css
-    │   ├── utils         			# utility functions
-    │   ├── views         			# components that are rendered by route
-    │   └── index.js				# app entry point and routes  
+    │   ├── components  # reusable components
+    │   ├── hocs    # higher order components
+    │   ├── stores  # redux actions, effects, and reducers
+    │   ├── styles  # css
+    │   ├── utils   # utility functions
+    │   ├── views   # components that are rendered by route
+    │   └── index.js    # app entry point and routes  
 
 Like with the backend, I wanted to approach this application as I would in a real world application. The benefits similarly from the backend architecture. To reiterate, seperation of concerns lead to easier unit testing and the organization also helps onboarding engineers in a scaling team.
 
